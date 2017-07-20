@@ -1,0 +1,103 @@
+2017-07-12 14:42:25 err select TABLE_NAME AS tablename from INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA='tpzj' and TABLE_NAME='demo'
+2017-07-12 14:42:25 err SHOW FULL COLUMNS FROM `demo`;
+2017-07-12 14:42:25 err SHOW INDEX FROM `demo`;
+2017-07-12 14:42:25 err select TABLE_NAME AS tablename from INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA='tpzj' and TABLE_NAME='demo1'
+2017-07-12 14:43:02 info : select TABLE_NAME AS tablename from INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA='tpzj' and TABLE_NAME='demo'
+2017-07-12 14:43:02 info : SHOW FULL COLUMNS FROM `demo`;
+2017-07-12 14:43:02 info : SHOW INDEX FROM `demo`;
+2017-07-12 14:43:02 info : select TABLE_NAME AS tablename from INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA='tpzj' and TABLE_NAME='demo1'
+2017-07-12 14:46:00 info : select TABLE_NAME AS tablename from INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA='tpzj' and TABLE_NAME='demo'
+2017-07-12 14:46:00 info : SHOW FULL COLUMNS FROM `demo`;
+2017-07-12 14:46:00 info : SHOW INDEX FROM `demo`;
+2017-07-12 14:46:00 info : select TABLE_NAME AS tablename from INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA='tpzj' and TABLE_NAME='demo1'
+2017-07-12 14:46:14 info : select TABLE_NAME AS tablename from INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA='tpzj' and TABLE_NAME='demo'
+2017-07-12 14:46:14 info : SHOW FULL COLUMNS FROM `demo`;
+2017-07-12 14:46:14 info : SHOW INDEX FROM `demo`;
+2017-07-12 14:46:14 info : select TABLE_NAME AS tablename from INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA='tpzj' and TABLE_NAME='demo1'
+2017-07-12 15:00:45 info : select TABLE_NAME AS tablename from INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA='tpzj' and TABLE_NAME='demo'
+2017-07-12 15:00:45 info : SHOW FULL COLUMNS FROM `demo`;
+2017-07-12 15:00:45 info : SHOW INDEX FROM `demo`;
+2017-07-12 15:00:45 info : select TABLE_NAME AS tablename from INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA='tpzj' and TABLE_NAME='demo1'
+2017-07-12 15:01:12 info : select TABLE_NAME AS tablename from INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA='tpzj' and TABLE_NAME='demo'
+2017-07-12 15:01:12 info : SHOW FULL COLUMNS FROM `demo`;
+2017-07-12 15:01:12 info : SHOW INDEX FROM `demo`;
+2017-07-12 15:01:12 info : ALTER TABLE `demo` ADD   KEY `idx_demoxxx_status`  (`start_status`,`login_status` )
+2017-07-12 15:01:12 info : ALTER TABLE `demo` DROP INDEX `idx_demo_status`
+2017-07-12 15:01:12 info : select TABLE_NAME AS tablename from INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA='tpzj' and TABLE_NAME='demo1'
+2017-07-12 15:02:25 info : select TABLE_NAME AS tablename from INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA='tpzj' and TABLE_NAME='demo'
+2017-07-12 15:02:25 info : SHOW FULL COLUMNS FROM `demo`;
+2017-07-12 15:02:25 info : SHOW INDEX FROM `demo`;
+2017-07-12 15:02:25 info : ALTER TABLE `demo` DROP INDEX `idx_demoxxx_status`
+2017-07-12 15:02:25 info : ALTER TABLE `demo` ADD   KEY `idx_demoxxx_status`  (`login_status` )
+2017-07-12 15:02:25 info : select TABLE_NAME AS tablename from INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA='tpzj' and TABLE_NAME='demo1'
+2017-07-12 15:02:51 info : select TABLE_NAME AS tablename from INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA='tpzj' and TABLE_NAME='demo'
+2017-07-12 15:02:51 info : SHOW FULL COLUMNS FROM `demo`;
+2017-07-12 15:02:51 info : SHOW INDEX FROM `demo`;
+2017-07-12 15:02:51 info : ALTER TABLE `demo` ADD   KEY `idx_demo_status`  (`start_status`,`login_status` )
+2017-07-12 15:02:51 info : ALTER TABLE `demo` DROP INDEX `idx_demoxxx_status`
+2017-07-12 15:02:51 info : select TABLE_NAME AS tablename from INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA='tpzj' and TABLE_NAME='demo1'
+2017-07-12 15:11:29 info : select TABLE_NAME AS tablename from INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA='tpzj' and TABLE_NAME='demo'
+2017-07-12 15:11:29 info : SHOW FULL COLUMNS FROM `demo`;
+2017-07-12 15:11:29 info : SHOW INDEX FROM `demo`;
+2017-07-12 15:11:29 info : select TABLE_NAME AS tablename from INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA='tpzj' and TABLE_NAME='demo1'
+2017-07-12 15:11:29 info : CREATE TABLE `demo1` (
+	`id`  int(10) not null PRIMARY KEY AUTO_INCREMENT,
+	`start_status`  enum('Y','N') default 'Y' comment '启用状态',
+	`login_status`  enum('Y','N') default 'N' comment '登陆状态',
+	`password`  char(32) not null comment '密码',
+	`age`  int(2),
+	`sex`  enum('M','W') default 'M',
+	`info`  longtext not null,
+	`savetime`  int(10) not null,
+	`uname`  char(30),
+	 unique KEY `idx_demo_uname`  (`uname` ),
+	  KEY `idx_demo_savetime`  (`savetime` ),
+	  KEY `idx_demo_status`  (`start_status`,`login_status` )
+)ENGINE = innodb DEFAULT CHARACTER SET utf8 COMMENT='demo';
+2017-07-12 15:22:13 info : select TABLE_NAME AS tablename from INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA='tpzj' and TABLE_NAME='demo'
+2017-07-12 15:22:13 info : SHOW FULL COLUMNS FROM `demo`;
+2017-07-12 15:22:13 info : SHOW INDEX FROM `demo`;
+2017-07-12 15:22:13 info : select TABLE_NAME AS tablename from INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA='tpzj' and TABLE_NAME='demo1'
+2017-07-12 15:22:13 info : SHOW FULL COLUMNS FROM `demo1`;
+2017-07-12 15:22:13 info : SHOW INDEX FROM `demo1`;
+2017-07-12 15:22:13 info : ALTER TABLE `demo1` COMMENT demo111;
+2017-07-12 15:22:20 info : select TABLE_NAME AS tablename from INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA='tpzj' and TABLE_NAME='demo'
+2017-07-12 15:22:20 info : SHOW FULL COLUMNS FROM `demo`;
+2017-07-12 15:22:20 info : SHOW INDEX FROM `demo`;
+2017-07-12 15:22:20 info : select TABLE_NAME AS tablename from INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA='tpzj' and TABLE_NAME='demo1'
+2017-07-12 15:22:20 info : SHOW FULL COLUMNS FROM `demo1`;
+2017-07-12 15:22:20 info : SHOW INDEX FROM `demo1`;
+2017-07-12 15:22:20 info : ALTER TABLE `demo1` COMMENT demo111;
+2017-07-12 15:22:34 info : select TABLE_NAME AS tablename from INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA='tpzj' and TABLE_NAME='demo'
+2017-07-12 15:22:34 info : SHOW FULL COLUMNS FROM `demo`;
+2017-07-12 15:22:34 info : SHOW INDEX FROM `demo`;
+2017-07-12 15:22:34 info : select TABLE_NAME AS tablename from INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA='tpzj' and TABLE_NAME='demo1'
+2017-07-12 15:22:34 info : SHOW FULL COLUMNS FROM `demo1`;
+2017-07-12 15:22:34 info : SHOW INDEX FROM `demo1`;
+2017-07-12 15:22:34 info : ALTER TABLE `demo1` COMMENT demo;
+2017-07-12 15:25:12 info : select TABLE_NAME AS tablename from INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA='tpzj' and TABLE_NAME='demo'
+2017-07-12 15:25:12 info : SHOW FULL COLUMNS FROM `demo`;
+2017-07-12 15:25:12 info : SHOW INDEX FROM `demo`;
+2017-07-12 15:25:12 info : select TABLE_NAME AS tablename from INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA='tpzj' and TABLE_NAME='demo1'
+2017-07-12 15:25:12 info : SHOW FULL COLUMNS FROM `demo1`;
+2017-07-12 15:25:12 info : SHOW INDEX FROM `demo1`;
+2017-07-12 15:25:12 info : ALTER TABLE `demo1` modify COMMENT demo;
+2017-07-12 15:25:57 info : select TABLE_NAME AS tablename from INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA='tpzj' and TABLE_NAME='demo'
+2017-07-12 15:25:57 info : SHOW FULL COLUMNS FROM `demo`;
+2017-07-12 15:25:57 info : SHOW INDEX FROM `demo`;
+2017-07-12 15:25:57 info : select TABLE_NAME AS tablename from INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA='tpzj' and TABLE_NAME='demo1'
+2017-07-12 15:25:57 info : SHOW FULL COLUMNS FROM `demo1`;
+2017-07-12 15:25:57 info : SHOW INDEX FROM `demo1`;
+2017-07-12 15:25:57 info : ALTER TABLE `demo1` COMMENT "demo";
+2017-07-12 15:26:25 info : select TABLE_NAME AS tablename from INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA='tpzj' and TABLE_NAME='demo'
+2017-07-12 15:26:25 info : SHOW FULL COLUMNS FROM `demo`;
+2017-07-12 15:26:25 info : SHOW INDEX FROM `demo`;
+2017-07-12 15:26:25 info : select TABLE_NAME AS tablename from INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA='tpzj' and TABLE_NAME='demo1'
+2017-07-12 15:26:25 info : SHOW FULL COLUMNS FROM `demo1`;
+2017-07-12 15:26:25 info : SHOW INDEX FROM `demo1`;
+2017-07-12 15:26:25 info : ALTER TABLE `demo1` COMMENT "demo111";
+2017-07-12 15:26:42 info : select TABLE_NAME AS tablename from INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA='tpzj' and TABLE_NAME='demo'
+2017-07-12 15:26:42 info : SHOW FULL COLUMNS FROM `demo`;
+2017-07-12 15:26:42 info : SHOW INDEX FROM `demo`;
+2017-07-12 15:26:42 info : select TABLE_NAME AS tablename from INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA='tpzj' and TABLE_NAME='demo1'
+2017-07-12 15:26:42 info : DROP TABLE IF EXISTS demo1

@@ -1,0 +1,28 @@
+#!/usr/bin/env php
+<?php
+set_time_limit(600);
+error_reporting(E_ALL & ~E_NOTICE);
+$option = isset($argv[1]) && $argv[1] ? $argv[1] : null;
+require 'Dbman.php';
+define('RUN_DIR',__DIR__);
+$dbmanObj = new Dbman();
+
+switch($option)
+{
+    case 'update':
+        $showup = isset($argv[2]) && $argv[2] == 'showup' ? true : false;
+        $dbmanObj->update($showup);
+        if($dbmanObj->errMsg) var_dump($dbmanObj->errMsg);
+        break;
+    case 'backups':
+        $dbmanObj->backups();
+        break;
+    case 'help':
+        echo "\t update : Add or update the list,You can use showup parameters, display the SQL statement.".PHP_EOL;
+        echo "\t backups : Backup the data table".PHP_EOL;
+        break;
+    default:
+        echo "Usage : {update|backups|help}";
+        echo PHP_EOL;
+        break;
+}
